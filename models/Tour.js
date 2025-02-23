@@ -11,7 +11,7 @@ const getAllTours = async () => {
   let tours = await readData(TOURS_FILE);
 
   tours = tours.map((tour) => {
-    if (tour?.image && !tour.image.startsWith("http")) {
+    if (tour?.image ) {
       tour.image = `${BASE_URL}${tour.image}`;
     }
     return tour;
